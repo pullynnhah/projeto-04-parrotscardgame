@@ -58,15 +58,15 @@ main {
   transform-style: preserve-3d;
 }
 
-.back {
+.front {
   transform: rotateY(180deg);
 }
 
-.card.flipped .back {
+.card.flipped .front {
   transform: rotateY(0deg);
 }
 
-.card.flipped .front {
+.card.flipped .back {
   transform: rotateY(-180deg);
 }
 

@@ -11,11 +11,12 @@ function getNumberOfCards() {
 }
 
 function isNumberOfCardsValid(n) {
-  return n % 2 === 0 && n >= 4 && n <= 14;
+  return !isNaN(n) && n % 2 === 0 && n >= 4 && n <= 14;
 }
 
 const MIN_CARDS = 4;
 const MAX_CARDS = 14;
+
 const parrots = [
   "revertitparrot.gif",
   "bobrossparrot.gif",
