@@ -1,4 +1,4 @@
-function getNumberOfCards() {
+function setNumberOfCards() {
   numberOfCards = Number(
     prompt(
       `Com quantas cartas deseja jogar?\nEntre um número par no intervalo: [${MIN_CARDS}, ${MAX_CARDS}]`
@@ -24,7 +24,7 @@ function createDeck() {
   deck.sort(() => Math.random() - 0.5);
 }
 
-function setBoard() {
+function createBoard() {
   let cardsHTML = "";
   for (let i = 0; i < numberOfCards; i++) {
     cardsHTML += createCard(deck[i]);
@@ -47,6 +47,12 @@ function createCard(frontImage) {
 `;
 }
 
+function game() {
+  setNumberOfCards();
+  createDeck();
+  createBoard();
+}
+
 const MIN_CARDS = 4;
 const MAX_CARDS = 14;
 const PARROTS = [
@@ -62,4 +68,5 @@ const PARROTS = [
 const main = document.querySelector("main");
 const timer = document.querySelector(".timer");
 
+let deck;
 let numberOfCards = null;
