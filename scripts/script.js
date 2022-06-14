@@ -35,12 +35,12 @@ function createBoard() {
 
 function createCard(frontImage) {
   return `
-  <div class="card" onclick="userFlip(this, '${frontImage}')">
-    <div class="front face">
+  <div class="card" data-identifier="card" onclick="userFlip(this, '${frontImage}')">
+    <div class="front face" data-identifier="front-face">
       <img src="images/${frontImage}" alt="parrot gif"/>
     </div>
     
-    <div class="back face">
+    <div class="back face" data-identifier="back-face">
       <img src="images/back.png" alt="parrot" />
     </div>
   </div>
