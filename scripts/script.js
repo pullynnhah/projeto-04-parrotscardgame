@@ -6,7 +6,7 @@ function setNumberOfCards() {
   );
 
   if (!isNumberOfCardsValid(numberOfCards)) {
-    getNumberOfCards();
+    setNumberOfCards();
   }
 }
 
