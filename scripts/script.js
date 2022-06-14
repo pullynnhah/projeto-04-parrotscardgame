@@ -78,7 +78,7 @@ function validatePair() {
 
 function gameOver() {
   clearInterval(interval);
-  alert(`Você ganhou em ${flipCount} jogadas!`);
+  alert(`Você ganhou em ${flipCount} jogadas e ${time} segundos!`);
   const playAgain = prompt("Deseja jogar novamente? [sim/não]");
   if (playAgain === "sim") {
     game();
@@ -103,14 +103,15 @@ function checkPair() {
 }
 
 function game() {
-  setNumberOfCards();
-  createDeck();
-  createBoard();
-
+  timer.textContent = "0";
   currentPair = [];
   pairsCount = 0;
   flipCount = 0;
   time = 0;
+
+  setNumberOfCards();
+  createDeck();
+  createBoard();
 
   interval = setInterval(() => (timer.textContent = `${++time}`), 1000);
 }
