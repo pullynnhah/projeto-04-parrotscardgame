@@ -14,10 +14,42 @@ function isNumberOfCardsValid(n) {
   return !isNaN(n) && n % 2 === 0 && n >= 4 && n <= 14;
 }
 
+function createDeck() {
+  deck = [];
+  for (let i = 0; i < numberOfCards / 2; i++) {
+    deck.push(PARROTS[i]);
+    deck.push(PARROTS[i]);
+  }
+
+  deck.sort(() => Math.random() - 0.5);
+}
+
+function setBoard() {
+  let cardsHTML = "";
+  for (let i = 0; i < numberOfCards; i++) {
+    cardsHTML += createCard(deck[i]);
+  }
+
+  main.innerHTML = cardsHTML;
+}
+
+function createCard(frontImage) {
+  return `
+  <div class="card" onclick="flip(this)">
+    <div class="front face">
+      <img src="images/${frontImage}" alt="parrot gif"/>
+    </div>
+    
+    <div class="back face">
+      <img src="images/back.png" alt="parrot" />
+    </div>
+  </div>
+`;
+}
+
 const MIN_CARDS = 4;
 const MAX_CARDS = 14;
-
-const parrots = [
+const PARROTS = [
   "revertitparrot.gif",
   "bobrossparrot.gif",
   "tripletsparrot.gif",
@@ -26,5 +58,8 @@ const parrots = [
   "explodyparrot.gif",
   "unicornparrot.gif",
 ];
+
+const main = document.querySelector("main");
+const timer = document.querySelector(".timer");
 
 let numberOfCards = null;
