@@ -4,6 +4,7 @@ body {
 
 header {
   width: 80vw;
+  max-width: 1023px;
   margin: 40px auto;
   position: relative;
 }
@@ -12,13 +13,14 @@ h1 {
   color: #75b79e;
   text-align: center;
   text-transform: uppercase;
-  font: 700 56px/66px "Roboto", sans-serif;
+  margin: 0 20px;
+  font: 700 36px/42px "Roboto", sans-serif;
 }
 
 .timer {
   color: #fa6539;
   text-align: right;
-  font: 36px "Titan One", cursive;
+  font: 30px "Titan One", cursive;
 }
 
 main {
@@ -27,6 +29,8 @@ main {
   margin: 0 auto;
 
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   gap: 34px;
 }
