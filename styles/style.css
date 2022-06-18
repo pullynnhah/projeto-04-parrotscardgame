@@ -39,6 +39,7 @@ main {
   width: 117px;
   height: 146px;
   position: relative;
+  cursor: pointer;
 }
 
 .face {

@@ -56,7 +56,6 @@ function userFlip(card, title) {
     flip(card);
     flipCount++;
     currentPair.push([card, title]);
-    console.log(currentPair);
     if (currentPair.length === 2) {
       validatePair();
     }
@@ -86,11 +85,8 @@ function gameOver() {
 }
 
 function computerFlip() {
-  const flippedCards = document.querySelectorAll(".flipped:not(.paired)");
-  for (const flippedCard of flippedCards) {
-    flippedCard.classList.remove("flipped");
-  }
-
+  currentPair[0][0].classList.remove("flipped");
+  currentPair[1][0].classList.remove("flipped");
   currentPair = [];
 }
 
